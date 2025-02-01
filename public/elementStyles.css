@@ -1,0 +1,125 @@
+input {
+    width: 300px; /* Adjust the width */
+    padding: 10px; /* Add some padding for a better feel */
+    font-size: 16px; /* Make the text readable */
+    border: 2px solid #ccc; /* Add a border */
+    border-radius: 8px; /* Round the edges */
+    outline: none; /* Remove the default focus outline */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition effects */
+  }
+  
+  input:focus {
+    border-color: #4CAF50; /* Highlight the border on focus */
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); /* Add a subtle shadow */
+  }
+  
+  input::placeholder {
+    color: #aaa; /* Style the placeholder text */
+    font-style: italic; /* Make it italic */
+  }
+
+button {
+    background-color: #4CAF50; /* Primary button color */
+    color: white; /* Text color */
+    font-size: 16px; /* Font size */
+    border: none; /* Remove default border */
+    border-radius: calc(0.8 * 1vh); /* Rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transition */
+  }
+
+  button:hover{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Leichter Schatten */
+  }
+
+
+  /* Style for the info message container */
+.info-message {
+    color: #333; /* Dark text for readability */
+    padding: 10px 15px; /* Inner spacing */
+    margin: 10px 0; /* Space between messages */
+    font-size: 16px; /* Text size */
+    font-family: Arial, sans-serif; /* Clean font */
+    animation: fadeIn 0.3s ease-in-out; /* Smooth fade-in animation */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth fade-out effect */
+  }
+  
+  /* Fade-in animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px); /* Slide in from above */
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Optional style for disappearing messages */
+  .info-message.disappear {
+    opacity: 0;
+    transform: translateY(10px); /* Slide down on removal */
+  }
+
+  /* Fade-out animation */
+  @keyframes fadeOutLeft {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(25vh); /* Move left */
+    }
+}
+
+  @keyframes fadeOutRight {
+      from {
+          opacity: 1;
+          transform: translateX(0);
+      }
+      to {
+          opacity: 0;
+          transform: translateX(-25vh); /* Move right */
+      }
+  }
+
+  @keyframes fadeOutDown {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(25vh); /* Move left */
+    }
+  }
+
+  @keyframes fadeOutUp {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-25vh); /* Move right */
+    }
+  }
+
+  .fade-out-right {
+      animation: fadeOutRight 0.5s forwards;
+  }
+  .fade-out-left {
+    animation: fadeOutLeft 0.5s forwards;
+  }
+  .fade-out-down {
+    animation: fadeOutDown 0.5s forwards;
+  }
+  .fade-out-up {
+    animation: fadeOutUp 0.5s forwards;
+  } 
+
+
+  
+

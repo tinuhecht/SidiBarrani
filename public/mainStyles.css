@@ -1,0 +1,187 @@
+:root {
+    --cardHeight: 25vh;
+    --backCardHeight: calc(var(--cardHeight) * 0.6);
+    --tableSize: calc(var(--cardHeight) * 2.2);
+    --margin: calc(var(--cardHeight) * 0.1);
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+}
+#goalInfo {
+    top: var(--margin);
+    right: calc(50% - var(--tableSize) / 2);
+    transform: translateX(100%);
+    position: absolute;
+}
+
+#playerLeftCards {
+    bottom: calc(var(--cardHeight) + var(--margin) + var(--tableSize) / 2);
+    left: calc(50% - var(--tableSize) / 2 - var(--margin));
+    transform: translate(-75%, 50%) rotate(90deg);
+}
+#playerLeftInfo {
+    bottom: calc(var(--cardHeight) + var(--margin) + var(--tableSize) / 2);
+    left: calc(50% - var(--tableSize) / 2 - var(--backCardHeight) - 2 * var(--margin));
+    transform: translate(-100%, 50%);
+}
+
+#playerRightCards {
+    bottom: calc(var(--cardHeight) + var(--margin) + var(--tableSize) / 2);
+    right: calc(50% - var(--tableSize) / 2 - var(--margin));
+    transform: translate(75%, 50%) rotate(90deg);
+}
+#playerRightInfo {
+    bottom: calc(var(--cardHeight) + var(--margin) + var(--tableSize) / 2);
+    right: calc(50% - var(--tableSize) / 2 - var(--backCardHeight) - 2 * var(--margin));
+    transform: translate(100%, 50%);
+}
+
+#playerTopCards {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#playerTopInfo {
+    top: calc(0.5 * var(--backCardHeight));
+    left: calc(50% - 0.4 * var(--tableSize));
+    transform: translate(-100%, -50%);
+}
+#playerCards {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+#playerInfo {
+    bottom: calc(0.5 * var(--cardHeight));
+    right: calc(50% - 0.5 * var(--tableSize) - var(--cardHeight));
+    transform: translate(100%, 50%);
+}
+
+#playerCards, #playerLeftCards, #playerRightCards, #playerTopCards {
+    display: flex; /* Flexbox, um die Karten nebeneinander anzuordnen */
+    justify-content: center; /* Zentriert die Karten */
+    position: absolute;
+}
+#playerInfo, #playerLeftInfo, #playerRightInfo, #playerTopInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    align-items: center; /* Center children horizontally */
+}
+
+.card img{
+    height: var(--cardHeight);
+}
+
+.card{
+    display: inline-block;
+    /*transition: transform 0.3s ease; /* Smooth transition */
+    will-change: transform; /* Hint to the browser */
+    margin-left: calc(-0.15 * var(--cardHeight)); /* Überlappungseffekt */
+    margin-right: calc(-0.15 * var(--cardHeight)); /* Überlappungseffekt */
+}
+
+.card:hover {
+    transform: scale(1.1);
+    transform-origin: center bottom;
+}
+
+.backsideCard {
+    height: var(--backCardHeight);
+    display: inline-block;
+    margin-left: calc(-0.325 * var(--backCardHeight)); /* Überlappungseffekt */
+    margin-right: calc(-0.325 * var(--backCardHeight)); /* Überlappungseffekt */
+}
+
+/* Spieler-Tisch-Design */
+#table {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    flex-direction: column; /* Arrange children vertically */
+    bottom: calc(var(--cardHeight) + var(--margin));
+    left: 50%;
+    transform: translate(-50%, 0%);
+    height: var(--tableSize);
+    width: var(--tableSize);
+    border-radius: 2vh;
+    background-color: #228B22; /* Tischfarbe */
+}
+
+.bidTrumps, .knockButtons {
+    bottom: 20%;
+    display: flex;
+    justify-content: center; /* Zentriert die Karten */
+    position: absolute;
+
+}
+
+.trumpButton, .knockButtons button {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center;    /* Centers vertically */
+    width: calc(0.1 * var(--tableSize));
+    height: calc(0.1 * var(--tableSize));
+}
+ 
+.trumpButton img, .knockButtons button img { 
+    width: calc(0.08 * var(--tableSize));
+}
+
+.companionSelectionButton{
+    width: calc(0.1 * var(--tableSize));
+    display: flex;
+    position: absolute;
+}
+
+.companionSelectionButton img{
+    width: calc(0.08 * var(--tableSize));
+}
+
+.bidInputField{
+    bottom: calc(20% + 0.1 * var(--tableSize));
+    width: calc(0.6 * var(--tableSize));
+    position: absolute;
+}
+.ichLosseButton{
+    display: flex;
+    flex-direction: column; /* Arrange children vertically */
+    align-items: center; /* Center children horizontally */
+    justify-content: center; /* Center children vertically */
+    top: 25%;
+    position: absolute;
+}
+.ichLosseButton img{
+    width: calc(0.18 * var(--tableSize));
+}
+
+.playerBid{
+    display: flex;
+    position: absolute;
+    flex-direction: column; /* Arrange children vertically */
+    align-items: center; /* Center children horizontally */
+    justify-content: center; /* Center children vertically */
+}
+.playerBid img{
+    width: calc(0.15 * var(--tableSize));
+}
+.tableCard{
+    display: flex;
+    position: absolute;
+}
+.tableCard img{
+    height: var(--cardHeight);
+}
+
+.knockImg{
+    width: calc(0.6 * var(--tableSize));
+}
